@@ -74,7 +74,7 @@ class DATABASE_CONFIG {
 		'password' => 'password',
 		'database' => 'mtg_db',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 
 	public $test = array(
