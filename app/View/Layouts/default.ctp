@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
         <!-- META TAGS -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- TEMPLATE TITLE -->
-        <title>Mesh Mag | Magazine HTML Responsive Template</title>
-        <!-- TEMPLATE ICON -->
-        <link rel="icon" href="http://placehold.it/300x300">
+        <title>MTG Blog</title>
         <!-- STYLESHEET FILES -->
 		<?php echo $this->Html->charset(); ?>
 		<title>
@@ -38,62 +35,52 @@
     </head>
     
     <body>
-<?php echo $this->fetch('content'); ?>
-        
-		<?php
-		
-			echo $this->Html->script('jquery-3.2.1.min.js');
-	
-		?>			
-
+        <!-- START OUTER CONTAINER -->
+        <div class="outer-container js_plugins">
+            <!-- START HEADER -->
+				<?php echo $this->element('header'); ?>
+            <!-- END HEADER -->
+            <!-- START SECTION -->
+            <div class="section">
+                <div class="wrapper">
+                    <!-- START MAIN CONTENT -->
+                    <div class="main-content">
+                        <div class="main-content-wrap theiaStickySidebar">	
+							<?php echo $this->fetch('content'); ?>
+                        </div>
+                    </div>
+                    <!-- END MAIN CONTENT -->
+                    <!-- START SIDEBAR CONTENT -->
+					<?php echo $this->element('sidebar'); ?>
+                    <!-- END SIDEBAR CONTENT -->
+                </div>
+            </div>
+            <!-- END SECTION -->
+            <!-- START FOOTER -->
+            <footer>
+                <div class="wrapper backg-colr">
+                    <!-- START TICKER -->          
+                    <!-- START BOTTOM FOOTER -->
+                    <div class="bottom-footer">
+                        <!-- Start Temp Copyrights -->
+                        <div class="temp-copyrights up-case">
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                Copyright © 2019 <a href="/">MTG Blog </a> All Rights Reserved.
+                            </div>
+                            <!-- Designed By -->
+                            <div class="designed-by">
+                                Develope by <a href="#" target="_blank">Maged Ibrahem</a>.
+                            </div>
+                        </div>
+                        <!-- End Temp Copyrights -->
+                    </div>
+                    <!-- END BOTTOM FOOTER -->
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+        </div>
+        <!-- END OUTER CONTAINER -->							
     </body>
     
 </html>
-<?php
-/*$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-</head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
-
-			<?php echo $this->Flash->render(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'https://cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
-</body>
-</html>*/

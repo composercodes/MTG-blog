@@ -44,7 +44,9 @@ class AppController extends Controller {
 
         $this->Auth->authenticate = array('Form'=> array('userModel' => 'User','fields'=>array('username'=>'username')));
         
-
+        if (isset($this->request->params['admin'])){
+            $this->layout = 'admin';
+        }
 
 
      

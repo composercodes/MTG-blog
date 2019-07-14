@@ -17,7 +17,7 @@ class UsersController extends AppController {
         parent::beforefilter();
 		
 		// Allow only the view and index actions.
-		$this->Auth->allow('add');		
+		$this->Auth->allow('add','signout');		
     }	
 	
     /**
@@ -76,4 +76,13 @@ class UsersController extends AppController {
         }
         return $this->redirect($this->Auth->logout());
     }
+	
+    public function signout() {
+        $this->Session->delete("USER");
+        if ($this->Auth->logout()) {
+            //$this->Cookie->destroy();
+            $this->Session->setFlash("Log out",'default',array('class'=>'flash-success', 'logout'));
+        }
+        return  $this->redirect('/');
+    }	
 }
