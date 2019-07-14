@@ -1,230 +1,423 @@
-<?php
-/**
- * @link          https://cakephp.org CakePHP(tm) Project
- * @package       app.View.Pages
- * @since         CakePHP(tm) v 0.10.0.1076
- */
 
-if (!Configure::read('debug')):
-	throw new NotFoundException();
-endif;
+        <!-- START OUTER CONTAINER -->
+        <div class="outer-container js_plugins">
+            <!-- START HEADER -->
+            <header>
+                <!-- START TOP BAR -->
+                <div class="top-bar marg-botm backg-colr">
+                    <div class="wrapper">
+                        <!-- Start Nav Bar -->
+                        <nav>
+                            <div class="nav-respon-butt"></div>
+                            <ul class="nav-bar up-case">
+                                <li><a class="active" href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="teamwork.html">Team Work</a></li>
+                                <li><a href="privacy.html">Privacy</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li class="drop-menu">
+                                    <a href="#">Pages</a>
+                                    <ul class="menu backg-colr">
+                                        <li><a href="post-left-sidebar.html">Post Left Sidebar</a></li>
+                                        <li class="drop-menu">
+                                            <a href="#">Home Style</a>
+                                            <ul class="menu backg-colr">
+                                                <li><a href="index_preview1.html">Home Preview One</a></li>
+                                                <li><a class="active" href="index_preview2.html">Home Preview Two</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="post-right-sidebar.html">Post Right Sidebar</a></li>
+                                        <li class="drop-menu">
+                                            <a href="#">Other Pages</a>
+                                            <ul class="menu backg-colr">
+                                                <li><a href="error.html">Error 404</a></li>
+                                                <li><a href="archive.html">Archive</a></li>
+                                                <li><a href="sitemap.html">Site Map</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="post-fullwidth.html">Post Full Width</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- End Nav Bar -->
+                        
+                        <!-- Start Social Bar -->
+                        <ul class="social-bar">
+                            <!-- Rss -->
+                            <li>
+                                <a href="#" title="Rss"><i class="fa fa-rss fa-fw"></i></a>
+                            </li>
+                            <!-- Facebook -->
+                            <li>
+                                <a href="#" title="Facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                            </li>
+                            <!-- Twitter -->
+                            <li>
+                                <a href="#" title="Twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                            </li>
+                            <!-- Google Plus -->
+                            <li>
+                                <a href="#" title="Google Plus"><i class="fa fa-google-plus fa-fw"></i></a>
+                            </li>
+                            <!-- Youtube -->
+                            <li>
+                                <a href="#" title="Youtube"><i class="fa fa-youtube fa-fw"></i></a>
+                            </li>
+                            <!-- Tumblr -->
+                            <li>
+                                <a href="#" title="Tumblr"><i class="fa fa-tumblr fa-fw"></i></a>
+                            </li>
+                            <!-- Linkedin -->
+                            <li>
+                                <a href="#" title="Linkedin"><i class="fa fa-linkedin fa-fw"></i></a>
+                            </li>
+                            <!-- Instagram -->
+                            <li>
+                                <a href="#" title="Instagram"><i class="fa fa-instagram fa-fw"></i></a>
+                            </li>
+                        </ul>
+                        <!-- End Social Bar -->
+                        
+                        <!-- Start Search Bar -->
+                        <ul class="search-bar">
+                            <li>
+                                <form action="search.html">
+                                    <i class="fa fa-search main-colr" title="Search"></i>
+                                    <input type="text" name="search" value="" placeholder="Search Here Then Hit Enter ...">
+                                </form>
+                            </li>
+                        </ul>
+                        <!-- End Search Bar -->
+                    </div>
+                </div>
+                <!-- END TOP BAR -->
+                
+                
+                <!-- START HEAD LOGO -->
+                <div class="head-logo wrapper marg-botm">
+                    <!-- Start Logo -->
+                    <div class="logo">
+                        <div class="logo-text up-case">
+                            <h1 class="main-colr">Mesh</h1>
+                            <span>Mag</span>
+                            <p>The Best Magazine HTML Responsive Template</p>
+                        </div>
+                        <div class="logo-image">
+                            <a href="#"><img src="http://placehold.it/320x90" alt="logo-320x90"></a>
+                        </div>
+                    </div>
+                    <!-- End Logo -->
+                    
+                    <!-- Start Banner -->
+                    <div class="banner">
+                        <div class="banner-text">
+                            <h2 class="up-case">AdSpace<span> 728 x 90</span></h2>
+                        </div>
+                        <div class="banner-image">
+                            <a href="http://themeforest.net/item/mesh-template-magazine-responsive-theme/17330920" target="_blank"><img src="http://placehold.it/728x90" alt="adspace-728x90"></a>
+                        </div>
+                    </div>
+                    <!-- End Banner -->
+                </div>
+                <!-- END HEAD LOGO -->
 
-App::uses('Debugger', 'Utility');
-?>
-<h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
-<p>
-	<?php echo $this->Html->link(__d('cake_dev', 'Read the changelog'), 'https://cakephp.org/changelogs/' . Configure::version()); ?>
-</p>
-<?php
-if (Configure::read('debug') > 0):
-	Debugger::checkSecurityKeys();
-endif;
-?>
-<?php if (file_exists(WWW_ROOT . 'css' . DS . 'cake.generic.css')): ?>
-	<p id="url-rewriting-warning" style="background-color:#e32; color:#fff;">
-		<?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
-		1) <a target="_blank" href="https://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
-		2) <a target="_blank" href="https://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
-	</p>
-<?php endif; ?>
-<p>
-<?php
-if (version_compare(PHP_VERSION, '5.2.8', '>=')):
-	echo '<span class="notice success">';
-		echo __d('cake_dev', 'Your version of PHP is 5.2.8 or higher.');
-	echo '</span>';
-else:
-	echo '<span class="notice">';
-		echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP.');
-	echo '</span>';
-endif;
-?>
-</p>
-<p>
-	<?php
-	if (is_writable(TMP)):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'Your tmp directory is writable.');
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'Your tmp directory is NOT writable.');
-		echo '</span>';
-	endif;
-	?>
-</p>
-<p>
-	<?php
-	$settings = Cache::settings();
-	if (!empty($settings)):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'The %s is being used for core caching. To change the config edit %s', '<em>' . $settings['engine'] . 'Engine</em>', CONFIG . 'core.php');
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'Your cache is NOT working. Please check the settings in %s', CONFIG . 'core.php');
-		echo '</span>';
-	endif;
-	?>
-</p>
-<p>
-	<?php
-	$filePresent = null;
-	if (file_exists(CONFIG . 'database.php')):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'Your database configuration file is present.');
-			$filePresent = true;
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'Your database configuration file is NOT present.');
-			echo '<br/>';
-			echo __d('cake_dev', 'Rename %s to %s', CONFIG . 'database.php.default', CONFIG . 'database.php');
-		echo '</span>';
-	endif;
-	?>
-</p>
-<?php
-if (isset($filePresent)):
-	App::uses('ConnectionManager', 'Model');
-	try {
-		$connected = ConnectionManager::getDataSource('default');
-	} catch (Exception $connectionError) {
-		$connected = false;
-		$errorMsg = $connectionError->getMessage();
-		if (method_exists($connectionError, 'getAttributes')):
-			$attributes = $connectionError->getAttributes();
-			if (isset($attributes['message'])):
-				$errorMsg .= '<br />' . $attributes['message'];
-			endif;
-		endif;
-	}
-	?>
-	<p>
-		<?php
-			if ($connected && $connected->isConnected()):
-				echo '<span class="notice success">';
-					echo __d('cake_dev', 'CakePHP is able to connect to the database.');
-				echo '</span>';
-			else:
-				echo '<span class="notice">';
-					echo __d('cake_dev', 'CakePHP is NOT able to connect to the database.');
-					echo '<br /><br />';
-					echo $errorMsg;
-				echo '</span>';
-			endif;
-		?>
-	</p>
-<?php
-endif;
+            </header>
+            <!-- END HEADER -->
+            
+            
+            <!-- START SECTION -->
+            <div class="section">
+                <div class="wrapper">
+                    <!-- START MAIN CONTENT -->
+                    <div class="main-content">
+                        <div class="main-content-wrap theiaStickySidebar">
 
-App::uses('Validation', 'Utility');
-if (!Validation::alphaNumeric('cakephp')):
-	echo '<p><span class="notice">';
-		echo __d('cake_dev', 'PCRE has not been compiled with Unicode support.');
-		echo '<br/>';
-		echo __d('cake_dev', 'Recompile PCRE with Unicode support by adding <code>--enable-unicode-properties</code> when configuring');
-	echo '</span></p>';
-endif;
-?>
 
-<p>
-	<?php
-	if (CakePlugin::loaded('DebugKit')):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'DebugKit plugin is present');
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'DebugKit is not installed. It will help you inspect and debug different aspects of your application.');
-			echo '<br/>';
-			echo __d('cake_dev', 'You can install it from %s', $this->Html->link('GitHub', 'https://github.com/cakephp/debug_kit/tree/2.2'));
-		echo '</span>';
-	endif;
-	?>
-</p>
+ 
+                            
+                            <!-- Start Section7 -->
+                            <div class="section7 marg-botm row-main">
+                                <div class="headline up-case">
+                                    <h3>Latest Topics</h3>
+                                    <a href="labels.html">See More</a>
+                                </div>
+                                <!-- Content 1 -->
+                                <div class="sec-content main-padd">
+                                    <div class="post-img">
+                                        <div>
+                                            <img src="http://placehold.it/1920x1280" alt="img2">
+                                            <div class="post-share">
+                                                <span class="post-share-butt">
+                                                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="post-share-ico">
+                                                    <a href="#" title="Facebook">
+                                                        <i class="fa fa-facebook facebook-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Twitter">
+                                                        <i class="fa fa-twitter twitter-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Google Plus">
+                                                        <i class="fa fa-google-plus google-plus-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post">
+                                        <div>
+                                            <h2 class="post-title"><a href="#">Planning a trip to the beach this summer</a></h2>
+                                            <p class="post-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                            </p>
+                                            <span class="post-info up-case">
+                                                <span class="p-writer">
+                                                    <a href="#"><i class="fa fa-user"></i>Somebody</a>
+                                                </span>
+                                                <span class="p-date">
+                                                    <a href="#"><i class="fa fa-clock-o"></i>January 31, 2017</a>
+                                                </span>
+                                                <span class="p-comments">
+                                                    <a href="#"><i class="fa fa-comments"></i>7 Comments</a>
+                                                </span>
+                                            </span>
+                                            <a class="post-r-more up-case backg-colr" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content 2 -->
+                                <div class="sec-content main-padd">
+                                    <div class="post-img">
+                                        <div>
+                                            <img src="http://placehold.it/1920x1280" alt="img3">
+                                            <div class="post-share">
+                                                <span class="post-share-butt">
+                                                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="post-share-ico">
+                                                    <a href="#" title="Facebook">
+                                                        <i class="fa fa-facebook facebook-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Twitter">
+                                                        <i class="fa fa-twitter twitter-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Google Plus">
+                                                        <i class="fa fa-google-plus google-plus-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post">
+                                        <div>
+                                            <h2 class="post-title"><a href="#">How to make more money by doing less work?</a></h2>
+                                            <p class="post-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                            </p>
+                                            <span class="post-info up-case">
+                                                <span class="p-writer">
+                                                    <a href="#"><i class="fa fa-user"></i>Somebody</a>
+                                                </span>
+                                                <span class="p-date">
+                                                    <a href="#"><i class="fa fa-clock-o"></i>January 31, 2017</a>
+                                                </span>
+                                                <span class="p-comments">
+                                                    <a href="#"><i class="fa fa-comments"></i>7 Comments</a>
+                                                </span>
+                                            </span>
+                                            <a class="post-r-more up-case backg-colr" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content 3 -->
+                                <div class="sec-content main-padd">
+                                    <div class="post-img">
+                                        <div>
+                                            <img src="http://placehold.it/1920x1280" alt="img4">
+                                            <div class="post-share">
+                                                <span class="post-share-butt">
+                                                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="post-share-ico">
+                                                    <a href="#" title="Facebook">
+                                                        <i class="fa fa-facebook facebook-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Twitter">
+                                                        <i class="fa fa-twitter twitter-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Google Plus">
+                                                        <i class="fa fa-google-plus google-plus-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post">
+                                        <div>
+                                            <h2 class="post-title"><a href="#">How many articles should you write each day?</a></h2>
+                                            <p class="post-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                            </p>
+                                            <span class="post-info up-case">
+                                                <span class="p-writer">
+                                                    <a href="#"><i class="fa fa-user"></i>Somebody</a>
+                                                </span>
+                                                <span class="p-date">
+                                                    <a href="#"><i class="fa fa-clock-o"></i>January 31, 2017</a>
+                                                </span>
+                                                <span class="p-comments">
+                                                    <a href="#"><i class="fa fa-comments"></i>7 Comments</a>
+                                                </span>
+                                            </span>
+                                            <a class="post-r-more up-case backg-colr" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content 4 -->
+                                <div class="sec-content main-padd">
+                                    <div class="post-img">
+                                        <div>
+                                            <img src="http://placehold.it/1920x1280" alt="img5">
+                                            <div class="post-share">
+                                                <span class="post-share-butt">
+                                                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="post-share-ico">
+                                                    <a href="#" title="Facebook">
+                                                        <i class="fa fa-facebook facebook-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Twitter">
+                                                        <i class="fa fa-twitter twitter-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Google Plus">
+                                                        <i class="fa fa-google-plus google-plus-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post">
+                                        <div>
+                                            <h2 class="post-title"><a href="#">Become a professional photographer without any courses</a></h2>
+                                            <p class="post-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                            </p>
+                                            <span class="post-info up-case">
+                                                <span class="p-writer">
+                                                    <a href="#"><i class="fa fa-user"></i>Somebody</a>
+                                                </span>
+                                                <span class="p-date">
+                                                    <a href="#"><i class="fa fa-clock-o"></i>January 31, 2017</a>
+                                                </span>
+                                                <span class="p-comments">
+                                                    <a href="#"><i class="fa fa-comments"></i>7 Comments</a>
+                                                </span>
+                                            </span>
+                                            <a class="post-r-more up-case backg-colr" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content 5 -->
+                                <div class="sec-content main-padd">
+                                    <div class="post-img">
+                                        <div>
+                                            <img src="http://placehold.it/1920x1280" alt="img6">
+                                            <div class="post-share">
+                                                <span class="post-share-butt">
+                                                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="post-share-ico">
+                                                    <a href="#" title="Facebook">
+                                                        <i class="fa fa-facebook facebook-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Twitter">
+                                                        <i class="fa fa-twitter twitter-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a href="#" title="Google Plus">
+                                                        <i class="fa fa-google-plus google-plus-bg" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post">
+                                        <div>
+                                            <h2 class="post-title"><a href="#">Is technology making our lives easier or not?</a></h2>
+                                            <p class="post-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                            </p>
+                                            <span class="post-info up-case">
+                                                <span class="p-writer">
+                                                    <a href="#"><i class="fa fa-user"></i>Somebody</a>
+                                                </span>
+                                                <span class="p-date">
+                                                    <a href="#"><i class="fa fa-clock-o"></i>January 31, 2017</a>
+                                                </span>
+                                                <span class="p-comments">
+                                                    <a href="#"><i class="fa fa-comments"></i>7 Comments</a>
+                                                </span>
+                                            </span>
+                                            <a class="post-r-more up-case backg-colr" href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Section7 -->
+                            
 
-<h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
-<p>
-<?php
-echo __d('cake_dev', 'To change the content of this page, edit: %s.<br />
-To change its layout, edit: %s.<br />
-You can also add some CSS styles for your pages at: %s.',
-	'APP/View/Pages/home.ctp', 'APP/View/Layouts/default.ctp', 'APP/webroot/css');
-?>
-</p>
+                        </div>
+                    </div>
+                    <!-- END MAIN CONTENT -->
+                    
+                    
+                    <!-- START SIDEBAR CONTENT -->
+                    <div class="sidebar-content">
+                        <div class="sidebar-content-wrap theiaStickySidebar">
+                            <!-- Start Account Section -->
+                            <div class="account-section marg-botm row-side">
+                                <div class="headline up-case">
+                                    <h3>Account</h3>
+                                </div>
+                                <div class="account-wrap main-padd">
+                                    <ul class="accou">
+                                        <li><a href="login.html">Sign in</a></li>
+                                        <li><a href="register.html">Register Now</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End Account Section -->
 
-<h3><?php echo __d('cake_dev', 'Getting Started'); ?></h3>
-<p>
-	<?php
-	echo $this->Html->link(
-		sprintf('<strong>%s</strong> %s', __d('cake_dev', 'New'), __d('cake_dev', 'CakePHP 2.0 Docs')),
-		'https://book.cakephp.org/2.0/en/',
-		array('target' => '_blank', 'escape' => false)
-	);
-	?>
-</p>
-<p>
-	<?php
-	echo $this->Html->link(
-		__d('cake_dev', 'The 15 min Blog Tutorial'),
-		'https://book.cakephp.org/2.0/en/tutorials-and-examples/blog/blog.html',
-		array('target' => '_blank', 'escape' => false)
-	);
-	?>
-</p>
-
-<h3><?php echo __d('cake_dev', 'Official Plugins'); ?></h3>
-<p>
-<ul>
-	<li>
-		<?php echo $this->Html->link('DebugKit', 'https://github.com/cakephp/debug_kit/tree/2.2') ?>:
-		<?php echo __d('cake_dev', 'provides a debugging toolbar and enhanced debugging tools for CakePHP applications.'); ?>
-	</li>
-	<li>
-		<?php echo $this->Html->link('Localized', 'https://github.com/cakephp/localized') ?>:
-		<?php echo __d('cake_dev', 'contains various localized validation classes and translations for specific countries'); ?>
-	</li>
-</ul>
-</p>
-
-<h3><?php echo __d('cake_dev', 'More about CakePHP'); ?></h3>
-<p>
-<?php echo __d('cake_dev', 'CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.'); ?>
-</p>
-<p>
-<?php echo __d('cake_dev', 'Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.'); ?>
-</p>
-
-<ul>
-	<li><a href="https://cakephp.org">CakePHP</a>
-	<ul><li><?php echo __d('cake_dev', 'The Rapid Development Framework'); ?></li></ul></li>
-	<li><a href="https://book.cakephp.org"><?php echo __d('cake_dev', 'CakePHP Documentation'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Your Rapid Development Cookbook'); ?></li></ul></li>
-	<li><a href="https://api.cakephp.org"><?php echo __d('cake_dev', 'CakePHP API'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Quick API Reference'); ?></li></ul></li>
-	<li><a href="https://bakery.cakephp.org"><?php echo __d('cake_dev', 'The Bakery'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Everything CakePHP'); ?></li></ul></li>
-	<li><a href="https://plugins.cakephp.org"><?php echo __d('cake_dev', 'CakePHP Plugins'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'A comprehensive list of all CakePHP plugins created by the community'); ?></li></ul></li>
-	<li><a href="https://community.cakephp.org"><?php echo __d('cake_dev', 'CakePHP Community Center'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Everything related to the CakePHP community in one place'); ?></li></ul></li>
-	<li><a href="http://discourse.cakephp.org/">CakePHP Official Forum </a>
-	<ul><li>CakePHP discussion forum</li></ul></li>
-	<li><a href="http://discourse.cakephp.org/"><?php echo __d('cake_dev', 'CakePHP Official Forum'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'CakePHP discussion forum'); ?></li></ul></li>
-	<li><a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
-	<ul><li><?php echo __d('cake_dev', 'Live chat about CakePHP'); ?></li></ul></li>
-	<li><a href="https://github.com/cakephp/"><?php echo __d('cake_dev', 'CakePHP Code'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Find the CakePHP code on GitHub and contribute to the framework'); ?></li></ul></li>
-	<li><a href="https://github.com/cakephp/cakephp/issues"><?php echo __d('cake_dev', 'CakePHP Issues'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'CakePHP Issues'); ?></li></ul></li>
-	<li><a href="https://github.com/cakephp/cakephp/wiki#roadmaps"><?php echo __d('cake_dev', 'CakePHP Roadmaps'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'CakePHP Roadmaps'); ?></li></ul></li>
-	<li><a href="https://training.cakephp.org"><?php echo __d('cake_dev', 'Training'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Join a live session and get skilled with the framework'); ?></li></ul></li>
-	<li><a href="https://cakefest.org"><?php echo __d('cake_dev', 'CakeFest'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Don\'t miss our annual CakePHP conference'); ?></li></ul></li>
-	<li><a href="https://cakefoundation.org"><?php echo __d('cake_dev', 'Cake Software Foundation'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Promoting development related to CakePHP'); ?></li></ul></li>
-</ul>
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR CONTENT -->
+                </div>
+            </div>
+            <!-- END SECTION -->
+            
+            
+            <!-- START FOOTER -->
+            <footer>
+                <div class="wrapper backg-colr">
+                    <!-- START TICKER -->          
+                    <!-- START BOTTOM FOOTER -->
+                    <div class="bottom-footer">
+                        <!-- Start Temp Copyrights -->
+                        <div class="temp-copyrights up-case">
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                Copyright © 2016-2017 <a href="index.html">Mesh Mag - Responsive Magazine</a> All Rights Reserved.
+                            </div>
+                            <!-- Designed By -->
+                            <div class="designed-by">
+                                Designed by <a href="https://www.facebook.com/AhmadSaleh1688" target="_blank">Ahmad Saleh</a>.
+                            </div>
+                        </div>
+                        <!-- End Temp Copyrights -->
+                    </div>
+                    <!-- END BOTTOM FOOTER -->
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+        </div>
+        <!-- END OUTER CONTAINER -->

@@ -70,9 +70,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'mtg_db',
+		'login' => 'root',
+		'password' => '',
+		'database' => 'cakephp',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

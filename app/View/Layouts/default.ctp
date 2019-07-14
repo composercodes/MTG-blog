@@ -1,20 +1,56 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <!-- META TAGS -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- TEMPLATE TITLE -->
+        <title>Mesh Mag | Magazine HTML Responsive Template</title>
+        <!-- TEMPLATE ICON -->
+        <link rel="icon" href="http://placehold.it/300x300">
+        <!-- STYLESHEET FILES -->
+		<?php echo $this->Html->charset(); ?>
+		<title>
+			<?php echo $cakeDescription ?>:
+			<?php echo $this->fetch('title'); ?>
+		</title>
+		<?php
+			echo $this->Html->meta('icon');
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+			echo $this->Html->css('normalize.min.css');
+			echo $this->Html->css('font-awesome.min.css');
+			echo $this->Html->css('main-style.css');
+			echo $this->Html->css('main-style_preview2.css');
+			echo $this->Html->css('responsive.css');
+
+			echo $this->fetch('meta');
+			echo $this->fetch('css');
+			echo $this->fetch('script');
+		?>		
+
+        <!-- IE Script Code -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+<?php echo $this->fetch('content'); ?>
+        
+		<?php
+		
+			echo $this->Html->script('jquery-3.2.1.min.js');
+	
+		?>			
+
+    </body>
+    
+</html>
+<?php
+/*$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
@@ -60,4 +96,4 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
-</html>
+</html>*/

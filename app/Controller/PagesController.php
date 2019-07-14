@@ -30,6 +30,15 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
+    /**
+     * call beforeFilter
+    **/
+    public function beforefilter(){
+        parent::beforefilter();
+		
+		// Allow only the display actions.
+		$this->Auth->allow('display');		
+    }
 /**
  * This controller does not use a model
  *

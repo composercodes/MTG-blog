@@ -1,0 +1,1423 @@
+/*------------------------------//// START RESPONSIVE STYLE ////------------------------------*/
+
+/*
+--------------------------
+Template Name:   MESH MAG - Magazine HTML Responsive Template.
+Version:         1.3
+Date:            20 November 2017
+Primary use:     Site Template ( HTML5, CSS3, jQuery ) - Magazine.
+Author:          Ahmed_Saleh.
+--------------------------
+*/
+
+/*
+[ Start Table of Contents ]
+--------------------------
+- 1#HOME PAGE & MAIN RESPONSIVE STYLE.
+- 2#INNER PAGES RESPONSIVE STYLE.
+- PRINT STYLE.
+*/
+
+/*///---------------/// START 1#HOME PAGE & MAIN RESPONSIVE STYLE ///---------------///*/
+
+/*--------------------/// START ( SCREEN <= 479px ) ///--------------------*/
+@media ( max-width: 479px ) {
+    
+    /*----- START SMALL POSTS -----*/
+    .sm-post .post-img > div,
+    .section4 .right-part .sm-post .post-img > div,
+    .section6 .conten .bottom-part .post-img > div {
+        width: 153px;
+        margin-right: 0
+    }
+    
+    .sm-post > div:nth-child(2),
+    .section6 .conten .bottom-part > div:nth-child(2) {
+        padding-left: 20px;
+        overflow: hidden
+    }
+    
+    .sm-post .post-title,
+    .conten .bottom-part .post-title {
+        max-height: 60px
+    }
+    
+    .sm-post .post-info .p-writer,
+    .conten .bottom-part .post-info .p-writer {
+        display: none
+    }
+    /*----- END SMALL POSTS -----*/
+    
+    
+    
+    /*----- START HEADER -----*/
+    /* Top Bar */
+    .top-bar .nav-bar > li a:hover,
+    .top-bar .nav-bar li.drop-menu ul.menu li a:hover,
+    .top-bar .nav-bar > li .active {
+        padding-left: 10px
+    }
+    
+    /* Intro Slider */
+    .intro-slider .cntr-slid .caption .post-title {
+        margin-bottom: 0;
+        font-size: 24px
+    }
+    
+    .intro-slider .cntr-slid .caption .post-info {
+        display: none
+    }
+    /*----- END HEADER -----*/
+    
+    
+    
+    /*----- START SECTION -----*/
+    /* Main Content */
+    .section8 .post-img > div .caption .post-title {
+        margin-bottom: 0;
+        font-size: 24px
+    }
+    
+    .section8 .post-img > div .caption .post-info {
+        display: none
+    }
+    
+    .section8 .post-share {
+        top: -120px !important
+    }
+    
+    /* Sidebar Content */
+    .comments-section .comments .user-img {
+        padding-left: 0
+    }
+    /*----- END SECTION -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 479px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 620px ) ///--------------------*/
+@media ( max-width: 620px ) {
+    
+    /*----- START HEADER -----*/
+    /* Intro Slider */
+    .intro-slider .cntr-slid .caption .post-body,
+    .intro-slider .cntr-slid .caption .post-r-more {
+        display: none
+    }
+    /*----- END HEADER -----*/
+    
+}
+/*--------------------/// START ( SCREEN <= 620px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 639px ) ///--------------------*/
+@media ( max-width: 639px ) {
+    
+    /*----- START SECTION -----*/
+    /* Main Content */
+    .section8 .post-img > div .caption .post-body,
+    .section8 .post-img > div .caption .post-r-more {
+        display: none
+    }
+    /*----- END SECTION -----*/
+    
+    
+    
+    /*----- START FOOTER -----*/
+    .top-footer .top-footer-social {
+        padding: 0 20px
+    }
+    /*----- END FOOTER -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 639px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 767px ) ///--------------------*/
+@media ( max-width: 767px ) {
+    
+    /*----- START HEADER -----*/
+    /* Intro Slider */
+    .intro-slider .cntr-slid:hover .title {
+        bottom: 80%
+    }
+    /*----- END HEADER -----*/
+    
+    
+    /*----- START SECTION -----*/
+    /* Main Content */
+    .section1 .top-part .post-img,
+    .section1 .top-part .post,
+    .section1 .bottom-part .box,
+    .section2,
+    .section3,
+    .section4 .left-part,
+    .section4 .right-part,
+    .section6 .conten,
+    .section7 .post-img,
+    .section7 .post,
+    .section7 .invert .post-img,
+    .section9 .vide {
+        float: none;
+        width: 100%
+    }
+    
+    .section1 .top-part .post-img > div,
+    .section1 .bottom-part .box:nth-child(1) .sm-post,
+    .section2,
+    .section4 .left-part > div,
+    .section7 .post-img > div,
+    .section7 .invert .post > div {
+        margin-right: 0
+    }
+    
+    .section1 .top-part .post > div {
+        margin-left: 0;
+        padding-top: 20px
+    }
+    
+    .section1 .bottom-part .box:nth-child(2) .sm-post,
+    .section3,
+    .section4 .right-part .sm-post,
+    .section6 .conten:nth-child(2),
+    .section7 .invert .post-img > div {
+        margin-left: 0
+    }
+    
+    .section1 .bottom-part .sm-post:last-child {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #EEE
+    }
+    
+    .section1 .bottom-part .box:nth-child(2) .sm-post:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none
+    }
+    
+    .section6 .tab-bar ul li {
+        display: block;
+        margin-right: 0
+    }
+    
+    .section6 .tab-bar ul li a {
+        padding: 20px
+    }
+    
+    .section6 .tab-bar ul .active:after {
+        display: none
+    }
+    
+    .section6 .conten:nth-child(2) {
+        border-top: 2px solid #EEE
+    }
+    
+    .section8 .caption {
+        padding-bottom: 50px
+    }
+    
+    .section8 .caption-close:after {
+        top: -20px
+    }
+    
+    .section8 .post-share {
+        top: -240px !important
+    }
+    
+    .section9 .vid-box:last-child .vide:nth-child(-n+3) {
+        border-bottom: 2px solid #EEE
+    }
+    
+    .section9 .vid-box:last-child .vide:last-child {
+        border-bottom: none
+    }
+    
+    /* Sidebar Content */
+    .subscribe-section form span {
+        top: 8px;
+        right: 8px
+    }
+    
+    .subscribe-section form span input[type="submit"] {
+        padding: 8px 8px 8px 22px
+    }
+    
+    .subscribe-section form span:after {;
+        top: 5px;
+        left: 5px
+    }
+    /*----- END SECTION -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 767px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 991px ) ///--------------------*/
+@media ( max-width: 991px ) {
+    
+    /*----- START HEADER -----*/
+    /* Top Bar */
+    .top-bar {
+        position: relative
+    }
+    
+    .top-bar .nav-respon-butt:after {
+        content: "\f0c9";
+        font-family: FontAwesome;
+        display: block;
+        color: #4756CA;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 70px;
+        left: 20px
+    }
+    
+    .top-bar .nav-bar {
+        display: none;
+        width: 220px;
+        background-color: #FFF;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 110px;
+        left: 0;
+        z-index: 9999
+    }
+    
+    .top-bar .nav-bar > li,
+    .top-bar .nav-bar li.drop-menu ul.menu li {
+        float: none;
+        border-bottom: 1px solid #EEE
+    }
+    
+    .top-bar .nav-bar > li a {
+        padding: 14.5px 10px;
+        color: #333;
+        font-size: 13px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu {
+        width: 180px;
+        background-color: #FFF;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+        top: 52px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu li a {
+        font-size: 11px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu li.drop-menu a {
+        font-size: 10px
+    }
+    
+    .top-bar .nav-bar > li a:hover,
+    .top-bar .nav-bar li.drop-menu ul.menu li a:hover,
+    .top-bar .nav-bar > li .active {
+        background-color: #EEE
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu li.drop-menu .menu {
+        width: 94%;
+        left: 180px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu li.drop-menu > a:after {
+        color: #333
+    }
+    
+    .top-bar .social-bar {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        text-align: center
+    }
+    
+    .top-bar .social-bar li {
+        float: none;
+        display: inline-block
+    }
+    
+    .top-bar .social-bar li a {
+        padding-left: 10px;
+        padding-right: 10px
+    }
+    
+    .top-bar .social-bar {
+        margin-left: 0 !important
+    }
+    
+    .top-bar .search-bar {
+        float: none
+    }
+    
+    .top-bar .search-bar form i {
+        padding: 0;
+        font-size: 23px;
+        background-color: transparent;
+        color: #4756CA;
+        position: absolute;
+        top: 15px;
+        right: 20px
+    }
+    
+    .top-bar .search-bar form input {
+        height: 40px;
+        margin: 0;
+        background-color: #EEE;
+        top: 10px;
+        right: 50px
+    }
+    
+    /* Nav Menu */
+    .menu-respon-butt {
+        display: block;
+        width: 48%;
+        height: 40px;
+        line-height: 40px;
+        margin: auto;
+        border-radius: 2px;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #FFF;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 0;
+        right: 0
+    }
+    
+    .menu-respon-butt:after {
+        content: "\f0d7";
+        font-family: FontAwesome;
+        font-size: 25px;
+        display: none;
+        margin: auto;
+        color: #4756CA;
+        position: absolute;
+        top: 22px;
+        left: 0;
+        right: 0
+    }
+    
+    .menu-respon-butt.shw_arw:after {
+        display: block
+    }
+    
+    .nav-menu .menu {
+        display: none;
+        float: none;
+        width: 250px;
+        margin: 0 auto;
+        background-color: #F3F3F3;
+        color: #333;
+        box-shadow: 2px 2px 2px #BBB;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+    
+    .nav-menu .menu li {
+        display: block
+    }
+    
+    .nav-menu .menu li:not(:first-child):before {
+        display: none
+    }
+    
+    .nav-menu .menu li a {
+        padding: 20px 0;
+        border-radius: 2px;
+        border-bottom: 1px solid #CCC;
+        -webkit-transition: all .35s ease;
+        transition: all .35s ease
+    }
+    
+    .nav-menu .menu li a:after {
+        display: none
+    }
+    
+    .nav-menu .menu li a:hover,
+    .nav-menu .menu li .active {
+        background-color: #4756CA;
+        color: #FFF
+    }
+    /*----- END HEADER -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 991px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 1199px ) ///--------------------*/
+@media ( max-width: 1199px ) {
+    
+    /*----- START HEADER -----*/
+    /* Head Logo */
+    .head-logo {
+        padding: 0 20px
+    }
+    
+    .head-logo .logo,
+    .head-logo .banner {
+        float: none;
+        margin: auto
+    }
+    
+    .head-logo .logo {
+        margin: 40px auto
+    }
+    
+    .head-logo .logo > div,
+    .head-logo .banner > div {
+        height: 100%;
+    }
+    /*----- END HEADER -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 1199px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 320px to 1179px ) ///--------------------*/
+@media ( min-width: 320px ) and ( max-width: 1179px ) {
+    
+    /*----- START HEADER -----*/
+    /* Intro Slider */
+    .intro-slider {
+        height: 100%
+    }
+    
+    .intro-slider .box {
+        float: none;
+        width: 100%
+    }
+    
+    .intro-slider .cntr-slid {
+        float: none;
+        width: 100%;
+        margin: 5px 0
+    }
+    
+    .intro-slider .cntr-slid .caption .post-r-more {
+        margin-top: 10px
+    }
+    
+    .intro-slider .cntr-slid .post-share {
+        top: -115px
+    }
+    /*----- END HEADER -----*/
+    
+    
+    /*----- START SECTION & FOOTER -----*/
+    .main-content,
+    .sidebar-content,
+    .top-footer .top-footer-content > div:nth-child(1),
+    .top-footer .top-footer-content > div:nth-child(2),
+    .top-footer .top-footer-content > div:nth-child(3),
+    .top-footer .top-footer-content > div:nth-child(4),
+    .bottom-footer .temp-copyrights .copyright,
+    .bottom-footer .temp-copyrights .designed-by {
+        float: none;
+        width: 100%
+    }
+    
+    .top-footer .categ,
+    .top-footer .links {
+        width: 46.75%
+    }
+    
+    .top-footer .top-footer-content > div:nth-child(1),
+    .top-footer .top-footer-content > div:nth-child(2) {
+        margin-bottom: 40px;
+        margin-right: 0
+    }
+    
+    .top-footer .top-footer-social li {
+        margin: 8px
+    }
+    
+    .bottom-footer {
+        height: 100%;
+        padding: 20px;
+        line-height: 2em;
+        text-align: center
+    }
+    
+    .top-footer .scroll-top i {
+        bottom: 20px
+    }
+    
+    /* Sidebar Content */
+    .sidebar-content-wrap {
+        padding-left: 0
+    }
+    /*----- END SECTION & FOOTER -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 320px to 1179px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 620px to 1179px ) ///--------------------*/
+@media ( min-width: 620px ) and ( max-width: 1179px ) {
+    
+    /*----- START HEADER -----*/
+    /* Intro Slider */
+    .intro-slider .box .top,
+    .intro-slider .box .bottom {
+        float: left;
+        width: calc(50% - 2.5px);
+        margin-bottom: 0
+    }
+    
+    .intro-slider .box .bottom {
+        margin-left: 5px
+    }
+    /*----- END HEADER -----*/
+    
+}  
+/*--------------------/// END ( SCREEN FROM 620px to 1179px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 768px to 820px ) ///--------------------*/
+@media ( min-width: 768px ) and ( max-width: 820px ) {
+    .section2 .sm-post .post-img > div,
+    .section3 .sm-post .post-img > div {
+        width: 107px
+    }
+    
+    .section4 .right-part .sm-post .post-img > div {
+        width: 131px
+    }
+    
+    .section6 .conten .bottom-part .post-img > div {
+        width: 104px
+    }
+    
+}
+/*--------------------/// END ( SCREEN FROM 768px to 820px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 992px to 1179px ) ///--------------------*/
+@media ( min-width: 992px ) and ( max-width: 1179px ) {
+    
+    /*----- START HEADER -----*/
+    /* Nav Menu */
+    .nav-menu .menu li a {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+    /*----- END HEADER -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 992px to 1179px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 992px to 1199px ) ///--------------------*/
+@media ( min-width: 992px ) and ( max-width: 1199px ) {
+    
+    /*----- START HEADER -----*/
+    /* Top Bar */
+    .top-bar {
+        padding: 0 20px
+    }
+    
+    .top-bar .nav-bar {
+        width: 62%
+    }
+    
+    .top-bar .social-bar {
+        margin-left: 0 !important
+    }
+    
+    .top-bar .social-bar li a {
+        padding-left: 9.5px;
+        padding-right: 9.5px
+    }
+    /*----- END HEADER -----*/
+    
+    
+    /*----- START SECTION -----*/
+    .section4 .right-part .sm-post .post-img > div {
+        width: 156px
+    }
+    /*----- END SECTION -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 992px to 1199px ) ///--------------------*/
+
+
+
+/*--------------------/// END ( SCREEN FROM 1180px to 1199px ) ///--------------------*/
+@media ( min-width: 1180px ) and ( max-width: 1199px ) {
+    
+    /*----- START FOOTER -----*/
+    .top-footer .top-footer-content > div:nth-child(1),
+    .top-footer .top-footer-content > div:nth-child(2) {
+        width: 31.87%
+    }
+    
+    .top-footer .categ,
+    .top-footer .links {
+        width: 47.30%
+    }
+    /*----- END FOOTER -----*/
+}
+/*--------------------/// END ( SCREEN FROM 1180px to 1199px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 320px to 359px ) ///--------------------*/
+@media ( min-width: 320px ) and ( max-width: 359px ) {
+    
+    /*----- START HEADER -----*/
+    /* Top Bar */
+    .top-bar .social-bar li a {
+        padding-left: 8px;
+        padding-right: 8px
+    }
+    
+    .top-bar .nav-bar {
+        width: 200px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu {
+        width: 175px
+    }
+    
+    .top-bar .nav-bar li.drop-menu ul.menu li.drop-menu .menu {
+        width: 77%;
+        left: 175px
+    }
+    
+    /* Head Logo */
+    .head-logo .logo-text h1,
+    .head-logo .logo-text span {
+        font-size: 49px
+    }
+    
+    .head-logo .logo-text p {
+        margin: 0;
+        font-size: 10px
+    }
+    
+    /* Nav Menu */
+    .menu-respon-butt {
+        left: 0
+    }
+    /*----- END HEADER -----*/
+    
+    
+    /*----- START SECTION -----*/
+    .row-side .headline h3 {
+        font-size: 22px
+    }
+    
+    .sm-post .post-img > div,
+    .section4 .right-part .sm-post .post-img > div,
+    .section6 .conten .bottom-part .post-img > div {
+        width: 130px
+    }
+    
+    .post-info .p-comments {
+        display: none
+    }
+    
+    .counter-section .s-counter .count {
+        font-size: 11px
+    }
+    /*----- END SECTION -----*/
+    
+    
+    /*----- START FOOTER -----*/
+    .top-footer .categ,
+    .top-footer .links {
+        width: 46.30%
+    }
+    
+    .top-footer .scroll-top i {
+        bottom: 8px
+    }
+    /*----- END FOOTER -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 320px to 359px ) ///--------------------*/
+
+/*///---------------/// END 1#HOME PAGE & MAIN RESPONSIVE STYLE ///---------------///*/
+
+/*
+/
+/
+/
+/
+/
+*/
+
+/*///--------------------/// START 2#INNER PAGES RESPONSIVE STYLE ///--------------------///*/
+
+/*--------------------/// START ( SCREEN <= 479px ) ///--------------------*/
+@media ( max-width: 479px ) {
+    
+    .page-results {
+        line-height: 1.5em
+    }
+    
+    /*----- START HEADLINE FOR PAGES -----*/
+    .pages .headline h3 {
+        font-size: 25px
+    }
+    
+    .pages .headline h3:before,
+    .pages .headline h3:after {
+        display: none
+    }
+    /*----- END HEADLINE FOR PAGES -----*/
+    
+    
+    /*----- START TEAMWORK PAGE -----*/
+    .teamwork .page-content .team,
+    .teamwork .page-content .team:last-child {
+        float: none;
+        width: 100%;
+        margin-bottom: 40px;
+        border: 1px dotted #CCC
+    }
+    
+    .teamwork .page-content .team:last-child {
+        margin-bottom: 0
+    }
+    
+    .teamwork .page-content .team .social {
+        margin: 20px auto
+    }
+    /*----- END TEAMWORK PAGE -----*/
+    
+    
+    /*----- START ERROR PAGE -----*/
+    .error .page-content h2 {
+        font-size: 148px
+    }
+    
+    .error .page-content h2:after {
+        font-size: 25px
+    }
+    /*----- END ERROR PAGE -----*/
+    
+    
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content form .sign-opti label {
+        margin-bottom: 10px
+    }
+    
+    .register .page-content form .sign-opti label {
+        margin-right: 20px
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+    
+    
+    /*----- START SITEMAP PAGE -----*/
+    .sitemap .post-info span:last-child {
+        display: none
+    }
+    /*----- END SITEMAP PAGE -----*/
+    
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-option > div {
+        width: 29.333%;
+        margin: 0 2%
+    }
+    
+    .post-footer .share li i,
+    .post-fullwidth .post-footer .share li i,
+    .post-videos .post-footer .share li i,
+    .post-footer .share li:last-child i {
+        width: 121.5px;
+        margin-right: 20px;
+        margin-bottom: 20px
+    }
+    
+    .post-footer .share li:nth-child(2n+2) i {
+        margin-right: 0
+    }
+    
+    .post-footer .share li:nth-child(n+5) i {
+        margin-bottom: 0
+    }
+    
+    .post-footer .comments .bar {
+        padding: 0 20px
+    }
+    
+    .post-footer .comments {
+        padding: 20px 0 0 0;
+        border-width: 1px 0 0 0
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 479px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 639px ) ///--------------------*/
+@media ( max-width: 639px ) {
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content form .log-with p:after,
+    .account .page-content form .log-with p:before {
+        display: none
+    }
+    
+    .account .page-content form .log-with > div {
+        float: none;
+        width: 100%
+    }
+    
+    .account .page-content form .log-with > div:first-of-type {
+        margin: 0 0 20px 0
+    }
+    
+    .account .page-content form .log-with > div > a {
+        font-size: 16px
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+}
+/*--------------------/// END ( SCREEN <= 639px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 480px to 991px ) ///--------------------*/
+@media ( min-width: 480px ) and ( max-width: 991px ) {
+    
+    /*----- START HEADLINE FOR PAGES -----*/
+    .pages .headline h3 {
+        font-size: 28px
+    }
+    
+    .pages .headline h3:before,
+    .pages .headline h3:after {
+        top: -8px
+    }
+    /*----- END HEADLINE FOR PAGES -----*/
+    
+    
+    /*----- START TEAMWORK PAGE -----*/
+    .teamwork .page-content .team {
+        width: 50%
+    }
+    
+    .teamwork .page-content .team {
+        margin-top: 40px
+    }
+    
+    .teamwork .page-content .team:nth-child(3),
+    .teamwork .page-content .team:nth-child(4) {
+        margin-top: 0
+    }
+    
+    .teamwork .page-content .team:nth-child(4) {
+        border-right: 1px dotted #CCC
+    }
+    /*----- END TEAMWORK PAGE -----*/
+    
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-footer .share li i,
+    .post-fullwidth .post-footer .share li i,
+    .post-videos .post-footer .share li i,
+    .post-footer .share li:last-child i {
+        margin-right: 20px;
+        margin-bottom: 20px
+    }
+    
+    .post-footer .share li:nth-child(n+4) i {
+        margin-bottom: 0
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 480px to 991px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 767px ) ///--------------------*/
+@media ( max-width: 767px ) {
+    
+    /*----- START PRIVACY PAGE -----*/
+    .privacy .page-content li {
+        float: none;
+        width: 100%
+    }
+    
+    .privacy .page-content li span {
+        margin-top: 5px
+    }
+    /*----- END PRIVACY PAGE -----*/
+    
+    
+    /*----- START CONTACT PAGE -----*/
+    .contact .page-content form {
+        width: 100%
+    }
+    
+    .contact .page-content form input {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0
+    }
+    
+    .contact .page-content form input[type="email"] {
+        margin: 0
+    }
+    /*----- END CONTACT PAGE -----*/
+    
+    
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content p {
+        width: 100%
+    }
+    
+    .account .page-content .forgot .form-close {
+        top: 5px;
+        right: 5px
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+    
+    
+    /*----- START ARCHIVE & SEARCH & LABELS PAGES -----*/
+    .page-results a {
+        display: block;
+        padding: 10px 20px;
+        margin-left: 0
+    }
+    
+    .page-results a:first-of-type {
+        margin: 20px 0
+    }
+    
+    .sec-content .post-img,
+    .sec-content .post {
+        float: none;
+        width: 100%
+    }
+    
+    .sec-content .post-img > div {
+        margin-right: 0
+    }
+    
+    .sec-content .post > div {
+        margin-left: 0;
+        padding-top: 20px
+    }
+    /*----- END ARCHIVE & SEARCH & LABELS PAGES -----*/
+    
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-option {
+        width: 100%;
+        padding: 10px
+    }
+    
+    .post-footer .nav .prev-post,
+    .post-footer .nav .next-post {
+        float: none;
+        width: 100%;
+        min-height: 100%;
+        border: none
+    }
+    
+    .post-footer .nav .prev-post {
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #EEE
+    }
+    
+    .post-footer .nav .next-post {
+        padding-left: 0;
+        margin-left: 0
+    }
+    
+    .post-footer .nav .post-info span:last-child {
+        display: none
+    }
+    
+    .post-videos .related .vid-box:last-child .vide:nth-child(-n+3) {
+        padding-bottom: 20px;
+        margin-bottom: 20px
+    }
+    
+    .post-videos .related .vid-box:last-child .vide:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0
+    }
+    
+    .post-footer .comments .bar li {
+        display: block;
+        margin-right: 0
+    }
+    
+    .post-footer .comments .bar a {
+        padding: 20px
+    }
+    
+    .post-footer .comments .bar .active:after {
+        display: none
+    }
+    
+    .post-footer .comments .comm-count .lve-com-butt {
+        float: none;
+        display: block;
+        margin-top: 10px
+    }
+    
+    .post-footer .comments .comnt-info {
+        margin: 10px 0
+    }
+    
+    .post-footer .comments .comnt-info .time {
+        display: block
+    }
+    
+    .post-footer .comments .comnt-text {
+        float: none;
+        width: 100%
+    }
+    
+    .post-footer .comments .comnt-children .reply {
+        padding-left: 20px 
+    }
+    
+    .post-footer .comments .comnt-children .reply:before {
+        left: 4px
+    }
+    
+    .post-footer .comments form input {
+        width: 100%
+    }
+    
+    .post-footer .comments form input[type="submit"] {
+        padding: 10px 15px
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 767px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 991px ) ///--------------------*/
+@media ( max-width: 991px ) {
+    
+    /*----- START ABOUT PAGE -----*/
+    .about .page-content .face,
+    .about .page-content .map {
+        float: none;
+        width: 100%
+    }
+    
+    .about .page-content .map {
+        margin-top: 20px
+    }
+    /*----- END ABOUT PAGE -----*/
+    
+    
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content .form-row,
+    .account .page-content .forgot .form-row,
+    .account .page-content .forgot .submit {
+        width: 100%
+    }
+    
+    .account .page-content .forgot {
+        min-height: 100%
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+    
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-left-sidebar,
+    .post-right-sidebar,
+    .post-left-sidebar ~ .sidebar-content,
+    .post-right-sidebar ~ .sidebar-content {
+        float: none;
+        width: 100%
+    }
+    
+    .post-left-sidebar ~ .sidebar-content .sidebar-content-wrap {
+        padding-right: 0
+    }
+    
+    .post-sub li:last-child a {
+        width: 94%
+    }
+    
+    .post-content .post-body img {
+        width: 100%
+    }
+    
+    .post-content .post-body blockquote {
+        margin: 0 20px 20px
+    }
+    
+    .post-footer .author .author-img,
+    .post-fullwidth .post-footer .author .author-img,
+    .post-videos .post-footer .author .author-img {
+        display: block;
+        max-width: 126px;
+        margin: 0 auto 20px;
+        padding-right: 0
+    }
+    
+    .post-footer .author .author-img,
+    .post-footer .author .author-social,
+    .post-fullwidth .post-footer .author .author-social,
+    .post-videos .post-footer .author .author-social {
+        width: auto
+    }
+    
+    .post-footer .author .author-info {
+        display: block;
+        margin: auto
+    }
+    
+    .post-fullwidth .post-footer .author .author-info,
+    .post-videos .post-footer .author .author-info {
+        padding: 0 20px
+    }
+    
+    .post-footer .author .author-social {
+        display: block;
+        padding-left: 0;
+        margin-top: 20px;
+        text-align: center
+    }
+    
+    .post-fullwidth .post-footer .author .author-social,
+    .post-videos .post-footer .author .author-social {
+        padding: 0 20px
+    }
+    
+    .post-footer .author .author-social li {
+        display: inline-block
+    }
+    
+    .post-footer .author .author-social li a {
+        padding-bottom: 0;
+        padding-right: 7px
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 991px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN <= 1179px ) ///--------------------*/
+@media ( max-width: 1179px ) {
+    
+    /*----- START ARCHIVE & SEARCH & SITEMAP & LABELS PAGES -----*/
+    .archive,
+    .search,
+    .sitemap,
+    .labels {
+        float: none;
+        width: 100%
+    }
+    
+    .labels ~ .sidebar-content .sidebar-content-wrap {
+        padding-right: 0
+    }
+    
+    .page-results a {
+        padding-left: 10px;
+        padding-right: 10px
+    }
+    /*----- END ARCHIVE & SEARCH & SITEMAP & LABELS PAGES -----*/
+    
+    
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content form .log-with > div > a {
+        font-size: 15px
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+    
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-content .post-body img {
+        margin-bottom: 20px
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN <= 1179px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 992px to 1199px ) ///--------------------*/
+@media ( min-width: 992px ) and ( max-width: 1199px ) {
+    
+    /*----- START ( lOGIN, REGISTER ) PAGES -----*/
+    .account .page-content form .log-with p:after,
+    .account .page-content form .log-with p:before {
+        min-width: 340px
+    }
+    /*----- END ( lOGIN, REGISTER ) PAGES -----*/
+    
+    
+    /*----- START LEFT & RIGHT PAGES -----*/
+    .post-left-sidebar,
+    .post-right-sidebar {
+        width: 62%
+    }
+    
+    .post-left-sidebar ~ .sidebar-content,
+    .post-right-sidebar ~ .sidebar-content {
+        width: 38%
+    }
+    
+    .post-right-sidebar ~ .sidebar-content {
+        float: right
+    }
+    
+    .post-left-sidebar ~ .sidebar-content .sidebar-content-wrap,
+    .post-right-sidebar ~ .sidebar-content .sidebar-content-wrap {
+        margin-top: 0
+    }
+    
+    .post-right-sidebar ~ .sidebar-content .sidebar-content-wrap {
+        padding-left: 20px
+    }
+    
+    .post-footer .share li i {
+        width: 67.5px
+    }
+    
+    .post-fullwidth .post-footer .share li i,
+    .post-videos .post-footer .share li i {
+        width: 130px
+    }
+    
+    .post-left-sidebar .post-footer .comments .bar li,
+    .post-right-sidebar .post-footer .comments .bar li {
+        margin-right: 5px
+    }
+    
+    .post-left-sidebar .post-footer .comments .bar a,
+    .post-right-sidebar .post-footer .comments .bar a {
+        padding-left: 14px;
+        padding-right: 14px
+    }
+    /*----- END LEFT & RIGHT PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 992px to 1199px ) ///--------------------*/
+
+
+
+/*--------------------/// START ( SCREEN FROM 320px to 359px ) ///--------------------*/
+@media ( min-width: 320px ) and ( max-width: 359px ) {
+    
+    /*----- START LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    .post-footer .tags span {
+        float: none;
+        display: block;
+        margin: 0 0 20px 0
+    }
+    
+    .post-footer .tags li {
+        float: none;
+        display: block
+    }
+    
+    .post-footer .tags li a {
+        margin-bottom: 10px
+    }
+    
+    .post-footer .tags li:last-child a {
+        margin-bottom: 0
+    }
+    
+    .post-footer .share li i,
+    .post-fullwidth .post-footer .share li i,
+    .post-videos .post-footer .share li i,
+    .post-footer .share li:last-child i {
+        width: 99.5px
+    }
+    
+    .post-footer .author .author-info span a {
+        display: block;
+        margin-left: 0
+    }
+    
+    .post-footer .comments .commenter-img {
+        float: none;
+        display: block;
+        margin-bottom: 20px
+    }
+    
+    .post-footer .comments .commenter-name {
+        display: block
+    }
+    /*----- END LEFT & RIGHT & FULL & VIDEOS PAGES -----*/
+    
+}
+/*--------------------/// END ( SCREEN FROM 320px to 359px ) ///--------------------*/
+
+/*///--------------------/// END 2#INNER PAGES RESPONSIVE STYLE ///--------------------///*/
+/*------------------------------//// END RESPONSIVE STYLE ////------------------------------*/
+
+/*
+/
+/
+/
+/
+/
+*/
+
+/*------------------------------//// START PRINT STYLE ////------------------------------*/
+@media print {
+    
+    /* Media Query For Print Posts */
+    
+    header,
+    .sidebar-content,
+    .post-sub,
+    .post-head > .post-info,
+    .post-option,
+    .post-footer,
+    .post-videos iframe,
+    footer {
+        display: none
+    }
+    
+    .post-left-sidebar,
+    .post-right-sidebar,
+    .post-full-width,
+    .post-videos {
+        float: none;
+        width: 100%
+    }
+    
+    .post-content .post-img {
+        max-width: 500px;
+        margin: 20px auto 0
+    }
+    
+}
+/*------------------------------//// END PRINT STYLE ////------------------------------*/
