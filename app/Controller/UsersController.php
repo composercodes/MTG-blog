@@ -45,26 +45,15 @@ class UsersController extends AppController {
 
         if ($this->Auth->loggedIn()) {
             $this->Session->setFlash('You are already Login','default',array('class'=>'flash-success'));
-            if($this->Auth->user('group_id')== 1) {
-                return  $this->redirect(array('controller'=>'home','action' => 'admin'));
-            }else if($this->Auth->user('group_id')== 2) {
-                return  $this->redirect('/doctor');
-            }else if($this->Auth->user('group_id')== 3) {
-                return  $this->redirect('/recep');
-            }
+                return  $this->redirect('/');
+
         }
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                if($this->Auth->user('group_id')== 1) {
-                    return  $this->redirect(array('controller'=>'home','action' => 'admin'));
-                }else if($this->Auth->user('group_id')== 2) {
-                    return  $this->redirect('/doctor');
-                }else if($this->Auth->user('group_id')== 3) {
-                    return  $this->redirect('/recep');
-                }
+                    return  $this->redirect('/');
             }else{
-                $this->Session->setFlash(__('خطأ ما فى الاسم أو الباسورد ... أعد المحاولة'),'default',array('class'=>'flash-error'));
-                return $this->redirect('/login');
+                $this->Session->setFlash(__('invalid username or password, please try again'),'default',array('class'=>'flash-error'));
+                return $this->redirect('/signin');
             }
         }
     }

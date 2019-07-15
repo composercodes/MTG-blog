@@ -21,6 +21,7 @@
 			echo $this->Html->css('main-style.css');
 			echo $this->Html->css('main-style_preview2.css');
 			echo $this->Html->css('responsive.css');
+			echo $this->Html->css('pages.css');
 
 			echo $this->fetch('meta');
 			echo $this->fetch('css');
@@ -46,6 +47,7 @@
                     <!-- START MAIN CONTENT -->
                     <div class="main-content">
                         <div class="main-content-wrap theiaStickySidebar">	
+							<?php echo $this->Session->flash(); ?>
 							<?php echo $this->fetch('content'); ?>
                         </div>
                     </div>
