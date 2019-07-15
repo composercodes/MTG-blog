@@ -23,12 +23,17 @@
 							<i class="fa fa-sign-out"></i>Logout
 						</a>
                         <?php }else{ ?>
+						<li>
 						<a href="<?php echo Router::url('/signin');?>" class="transition-effect">
-							<i class="fa fa-sign-in"></i>Login
-						</a>
+							<i class="fa fa-sign-in"></i> Sign in</a>
+						</a></li>
+						<li>
+						<a href="<?php echo Router::url('/signin');?>" class="transition-effect">
+							Register Now
+						</a>	</li>					
                         <?php } ?>				
-					<li><a href="login.html">Sign in</a></li>
-					<li><a href="register.html">Register Now</a></li>
+					
+					
 				</ul>
 			</div>
 		</div>

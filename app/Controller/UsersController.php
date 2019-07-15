@@ -42,7 +42,7 @@ class UsersController extends AppController {
      * User Login method
      */
     public function login() {
-        $this->layout='login_layout';
+
         if ($this->Auth->loggedIn()) {
             $this->Session->setFlash('You are already Login','default',array('class'=>'flash-success'));
             if($this->Auth->user('group_id')== 1) {
@@ -76,6 +76,24 @@ class UsersController extends AppController {
         }
         return $this->redirect($this->Auth->logout());
     }
+	
+    /**
+     * User Login method
+     */
+    public function signinn() {
+        if ($this->Auth->loggedIn()) {
+            $this->Session->setFlash('You are already Login','default',array('class'=>'flash-success'));
+            return  $this->redirect(array('controller'=>'Home','action' => 'index'));
+        }
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                return  $this->redirect(array('controller'=>'Home','action' => 'index'));
+            }else{
+                $this->Session->setFlash(__('خطأ ما فى الاسم أو الباسورد ... أعد المحاولة'),'default',array('class'=>'flash-error'));
+                return $this->redirect('/signin');
+            }
+        }
+    }	
 	
     public function signout() {
         $this->Session->delete("USER");
