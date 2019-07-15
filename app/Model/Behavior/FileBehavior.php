@@ -458,7 +458,7 @@ class FileBehavior extends ModelBehavior {
 
         for ($i = 1; $i <= 4; $i++)
             if (stripos($sizeStr, $units[$i]))
-                return ceil(floatval($sizeStr * pow(1024, $i)));
+                return @ceil(floatval(@$sizeStr * pow(1024, @$i)));
 
         return ceil(intval($sizeStr));
     }

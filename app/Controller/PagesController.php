@@ -50,12 +50,25 @@ class PagesController extends AppController {
  */
 	public $uses = array();
 
+
+	/**
+	* Displays a view
+	*
+	* Home Index
+	*/
+	public function home() {
+		$this->loadModel('Post');
+		$this->set('posts', $this->Post->find('all'));	
+		
+	}
 	/**
 	* Displays a view
 	*
 	* Admin Index
 	*/
 	public function admin_index() {
+		$this->loadModel('Post');
+		$this->set('posts', $this->Post->find('all'));	
 		
 	}
 	/**

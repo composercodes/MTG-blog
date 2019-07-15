@@ -21,6 +21,8 @@
 					<th class="sort"> <?php echo $this->Paginator->sort('id','#'); ?></th>
 					<th class="sort"> <?php echo $this->Paginator->sort('img','Post Image '); ?></th>
 					<th class="sort"> <?php echo $this->Paginator->sort('name','Post Title '); ?></th>
+					<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+					<th><?php echo $this->Paginator->sort('comment_count'); ?></th>					
 					<th class="sort"> <?php echo $this->Paginator->sort('created',' Post Date  '); ?></th>
 					<th >
 						options
@@ -39,11 +41,17 @@
 						
 					   <?php } ?>
 					   <td > 	<?php echo h($post['Post']['title']); ?> 	</td>
+		<td>
+			<?php echo $this->Html->link($post['User']['name'], array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?>
+		</td>
+		<td><?php echo h($post['Post']['comment_count']); ?>&nbsp;</td>					   
 					   <td >    <?php echo h($post['Post']['date']); ?> </td>
 						<td >    <?php echo h($post['Post']['created']); ?> </td>
 						<td >
-							<?php echo $this->Html->link(__('<i class="fa fa-edit"></i  >'.'&nbsp;View / Edit'),
-								array('action' => 'edit', $post['Post']['id']),array('class'=>'btn blue btnn btn-xs ','escape' => FALSE)); ?>
+						<?php echo $this->Html->link(__('View '),
+								array('action' => 'view', $post['Post']['id']),array('escape' => FALSE)); ?>
+							<?php echo $this->Html->link(__('Edit'),
+								array('action' => 'edit', $post['Post']['id']),array('escape' => FALSE)); ?>
 							<?php echo $this->Form->postLink( 'Delete', array( 'action' => 'delete',$post['Post']['id']), array(
                             'confirm'=>'Are you sure you want to delete post?' ) ); ?>
 

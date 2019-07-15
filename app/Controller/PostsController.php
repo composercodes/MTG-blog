@@ -3,20 +3,38 @@ App::uses('AppController', 'Controller');
 
 class PostsController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
+	/**
+	* Components
+	*
+	* @var array
+	*/
 	public $components = array('Paginator','RequestHandler');
 
+
+	//call beforefilter	
     public function beforefilter(){
         parent::beforefilter();
     }
+	
+	//auth check
     public function isAuthorized($user) {
-        //auth check
+        
         return True;
     }	
+	/**
+	* view method
+	*
+	* @throws NotFoundException
+	* @param string $id
+	* @return void
+	*/
+	public function view($id = null) {
+		if (!$this->Post->exists($id)) {
+			throw new NotFoundException(__('Invalid post'));
+		}
+		$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
+		$this->set('post', $this->Post->find('first', $options));
+	}
 	
 	/**
 	* index method
@@ -34,6 +52,21 @@ class PostsController extends AppController {
 		$this->set('posts', $this->Paginator->paginate());		
 
 	}  
+
+	/**
+	* view method
+	*
+	* @throws NotFoundException
+	* @param string $id
+	* @return void
+	*/
+	public function admin_view($id = null) {
+		if (!$this->Post->exists($id)) {
+			throw new NotFoundException(__('Invalid post'));
+		}
+		$options = array('conditions' => array('Post.' . $this->Post->primaryKey => $id));
+		$this->set('post', $this->Post->find('first', $options));
+	}
 
 	/**
 	* add method
@@ -94,12 +127,13 @@ class PostsController extends AppController {
 	public function admin_delete($id = null) {
 		$this->Post->id = $id;
 		if (!$this->Post->exists()) {
-			throw new NotFoundException(__('Invalid Post'));
+			throw new NotFoundException(__('Invalid post'));
 		}
+		$this->request->allowMethod('post', 'delete');
 		if ($this->Post->delete()) {
-			$this->Session->setFlash(__('The Post has been deleted.'));
+			$this->Flash->success(__('The post has been deleted.'));
 		} else {
-			$this->Session->setFlash(__('The Post could not be deleted. Please, try again.'));
+			$this->Flash->error(__('The post could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
@@ -107,74 +141,5 @@ class PostsController extends AppController {
     
 
     
-    /** ----------------------------- REST ACtions -------------------------------------------- *
-    
-    
-        /**
-    * top method
-    */
-	public function top() {
-		$this->set('courses', $this->Course->find('all',
-        array('order' => array( 'Course.id' => 'desc' ))));
-	}  
-    
-    
-     /**
-     * mark method
-    */
-	public function mark($id = null) {
-	   $this->loadModel('Schedule');
-		$options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id));
-		$this->set('course', $this->Course->find('first', $options));
-        $this->set('students', $this->Course->Student->find('all', array('conditions' => array('Student.course_id' => $id))));
-		$options = array('conditions' => array('Schedule.course_id' => $id));
-		$this->set('schedules', $this->Schedule->find('all', $options));
-        $this->set('couerse_id', $id);
-    }
-    
-    
-     /**
-     * checkTop method
-    */
-    public function checkTop() {
-        if ($this->request->is('ajax')) {
-            $this->loadModel('Student');
-            $this->autoRender = false;
-            $id = $this->request->data['id'];
-            $top = $this->request->data['top'];
-            if($this->Student->updateAll(array("Student.top"=>$top ),array("Student.id"=>$id))) {
-                return json_encode('success');
-            }else{
-                return json_encode('fail');
-            }
-        }
-        
-    }
-       
-    /** ----------------------------- REST -------------------------------------------- **/
-    public function __commonHeader() {
-        $this->response->header('Access-Control-Allow-Origin', '*');
-        $this->response->header('Access-Control-Allow-Methods','*');
-        $this->response->header('Access-Control-Allow-Credentials', 'true');
-        $this->response->header('Access-Control-Allow-Request-Method', '*');
-        $this->response->header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    }   
-    
-    public function restindex() {
-        $this->__commonHeader();
-        $courses = $this->Course->find('all',array('recursive'=>-1,'fields'=>array('title','id')));
-        $this->set(array(
-            'courses' => $courses,
-            '_serialize' => array('courses')
-        ));
-    }
-    
-    public function restCourseTop($course_id = null) {
-        $this->__commonHeader();
-        $students = $this->Course->Student->find('all',array('conditions'=>array('Student.top'=>1,'Student.course_id'=>$course_id),'recursive'=>-1,'fields'=>array('en_name','img')));
-        $this->set(array(
-            'students' => $students,
-            '_serialize' => array('students')
-        ));
-    }
+
 }

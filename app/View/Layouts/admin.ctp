@@ -73,6 +73,7 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
+		<?php echo $this->Flash->render(); ?>
 		<?php echo $this->fetch('content'); ?>
 		<!--
           <div class="row">

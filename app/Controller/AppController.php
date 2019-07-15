@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	
-	public $components = array('Cookie','Session','RequestHandler','Auth');
+	public $components = array('Cookie','Session','Flash','RequestHandler','Auth');
     public $helpers = array('Form','Session','Html','Text','Time','Number','Js');
 
     /**
