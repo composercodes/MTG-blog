@@ -24,7 +24,15 @@ class PostsController extends AppController {
 	* @return void
 	*/
 	public function admin_index() {
-		$this->set('posts', $this->Post->find('all',array('order' => array( 'Post.id' => 'desc' ))));
+		$this->Post->recursive = 0;
+        $this->paginate = array(
+            'limit' => 10,
+            'order' => array(
+                'Post.created' => 'asc'
+            )
+        );		
+		$this->set('posts', $this->Paginator->paginate());		
+
 	}  
 
 	/**
