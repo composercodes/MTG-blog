@@ -62,7 +62,19 @@ class AppController extends Controller {
 		if (isset($user['role']) && $user['role'] === 'admin') {
 			return true;
 		}
-
+		
+		// determine rest controller or not
+		if(in_array($this->params['controller'],array('rest_phones'))){
+			// For RESTful web service requests, we check the name of our contoller
+			$this->Auth->allow();
+			// https secure connection
+			/* $this->Security->requireSecure(); */
+			$this->Security->unlockedActions = array('edit','delete','add','view');
+			
+		}else{
+			// setup out Auth
+			$this->Auth->allow();			
+		}
 		// Default deny
 		$this->Flash->error(__('You are not allowed to acces this level'));
 		return false;

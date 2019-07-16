@@ -43,6 +43,11 @@
 	CakePlugin::routes();
 
 /**
+ * Add REST support api 
+ */	
+	Router::mapResources('rest_posts');
+	Router::parseExtensions();
+/**
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
