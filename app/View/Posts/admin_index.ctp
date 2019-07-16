@@ -22,8 +22,9 @@
 					<th class="sort"> <?php echo $this->Paginator->sort('img','Post Image '); ?></th>
 					<th class="sort"> <?php echo $this->Paginator->sort('name','Post Title '); ?></th>
 					<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-					<th><?php echo $this->Paginator->sort('comment_count'); ?></th>					
-					<th class="sort"> <?php echo $this->Paginator->sort('created',' Post Date  '); ?></th>
+					<th><?php echo $this->Paginator->sort('comment_count'); ?></th>	
+					<th class="sort"> <?php echo $this->Paginator->sort('date',' Post Date  '); ?></th>					
+					<th class="sort"> <?php echo $this->Paginator->sort('created',' created Date  '); ?></th>
 					<th >
 						options
 					</th>

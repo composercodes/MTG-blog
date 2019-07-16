@@ -32,25 +32,39 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	
-	public $components = array('Cookie','Session','Flash','RequestHandler','Auth');
+	public $components = array('Cookie','Session','Flash','RequestHandler','Auth' => array(
+        'loginRedirect' => array('controller' => 'pages', 'action' => 'home'),
+        'logoutRedirect' => array(
+            'controller' => 'pages',
+            'action' => 'home',
+        ),
+        'authorize' => array('Controller') 
+    )
+	);
     public $helpers = array('Form','Session','Html','Text','Time','Number','Js');
 
     /**
      * call beforeFilter
     **/
     public function beforeFilter() {
-        $this->Auth->authorize = 'controller';
-        $this->loadModel('User');
 
         $this->Auth->authenticate = array('Form'=> array('userModel' => 'User','fields'=>array('username'=>'username')));
         
         if (isset($this->request->params['admin'])){
             $this->layout = 'admin';
-        }
-
-
-     
+        } 
     }
+	
+	//auth check
+	public function isAuthorized($user) {
+		// Admin can access every action
+		
+		if (isset($user['role']) && $user['role'] === 'admin') {
+			return true;
+		}
 
-
+		// Default deny
+		$this->Flash->error(__('You are not allowed to acces this level'));
+		return false;
+	}
 }

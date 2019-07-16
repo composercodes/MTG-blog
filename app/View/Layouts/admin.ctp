@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Purple Admin</title>
+  <title> Admin</title>
   <!-- plugins:css -->
   <?php echo $this->Html->css('admin/materialdesignicons.min.css'); ?>
 
@@ -23,13 +23,12 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-logout d-none d-lg-block">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo Router::url('/signout');?>">
               <i class="mdi mdi-power"></i>
             </a>
           </li>
@@ -44,19 +43,15 @@
         <ul class="nav">
           <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
-              <div class="nav-profile-image">
-                <img src="images/faces/face1.jpg" alt="profile">
-                <span class="login-status online"></span> <!--change to offline or busy as needed-->              
-              </div>
               <div class="nav-profile-text d-flex flex-column">
-                <span class="font-weight-bold mb-2">David Grey. H</span>
-                <span class="text-secondary text-small">Project Manager</span>
+                <span class="font-weight-bold mb-2">Welcome, <?=  $this->session->read('Auth.User.username')?></span>
+                
               </div>
               <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="<?php echo Router::url('/admin'); ?>">
               <span class="menu-title">Dashboard</span>
               <i class="mdi mdi-home menu-icon"></i>
             </a>
@@ -67,7 +62,12 @@
               <i class="mdi mdi-format-list-bulleted menu-icon"></i>
             </a>
           </li>		  
-
+          <li class="nav-item">
+		   <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'index')); ?>" class="nav-link ">
+              <span class="menu-title">Users</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>	
         </ul>
       </nav>
       <!-- partial -->

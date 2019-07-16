@@ -1,31 +1,32 @@
 <?php
 App::uses('AppModel', 'Model');
+
 /**
  * User Model
  *
  */
 class User extends AppModel {
 
-/**
- * Validation rules
- *
- * @var array
- */
+	/**
+	* Validation rules
+	*
+	* @var array
+	*/
 	public $validate = array(
         'username' => array(
             'required' => array(
                 'rule' => array('notBlank'),
-                'message' => 'من فضلك ادخل اسم المستخدم'
+                'message' => 'Please Enter User Name'
             ),
-        'unique' => array(
-            'rule'    => 'isUnique',
-            'message' => ' الاسم مستخدم مسبقا'
-        )
-    ),
+			'unique' => array(
+				'rule'    => 'isUnique',
+				'message' => 'User Name already used before'
+			)
+		),
 		'name' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				'message' => 'من فضلك ادخل الاسم',
+				'message' => 'Please insert Name',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -35,7 +36,7 @@ class User extends AppModel {
 		'password' => array(
 			'minLength' => array(
 				'rule'    => array('minLength', '6'),
-				'message' => 'يجب ان يكون الباسورد اكبر من 6 حروف او ارقام',
+				'message' => 'Password should be more than 6 numbers or char',
 				'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
@@ -43,7 +44,7 @@ class User extends AppModel {
 			),
 			'matchpwd' => array(
 				'rule' => array('matchpwd'),
-				'message' => 'الباسورد غير متشابه',
+				'message' => 'password not match ',
 				'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
@@ -53,7 +54,7 @@ class User extends AppModel {
 		'retype_password' => array(
 			'matchpwd' => array(
 				'rule' => array('matchpwd'),
-				'message' => 'الباسورد غير متشابه',
+				'message' => 'password not match',
 				'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
@@ -61,36 +62,39 @@ class User extends AppModel {
 			),
 		),
 	);
-
-
-
-function matchpwd($data){
-	if ($this->data[$this->alias]['password']!=$this->data[$this->alias]['retype_password'] ) {
-		return false;
-	}
-	return true;
-}
-
-
-    function changeStatus($ids, $status) {
-        $ids = array_map('intval', $ids);
-        $this->query('UPDATE users SET active = ' . $status . ' WHERE id IN ('. implode(',', $ids) . ')');
-        return $this->getAffectedRows();
+	
+    public static function getroles() {
+        return array('admin'=>'admin','writer'=>'writer');
     }
 
-public function beforeSave($options = array()) {
-	if (isset($this->data[$this->alias]['password']) && !empty($this->data[$this->alias]['password'])) {
-		$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+
+	function matchpwd($data){
+		if ($this->data[$this->alias]['password']!=$this->data[$this->alias]['retype_password'] ) {
+			return false;
+		}
+		return true;
 	}
 
-	//if (isset($this->data[$this->alias]['username']) && !empty($this->data[$this->alias]['username'])) {
-	//	$this->data[$this->alias]['username'] = strtolower($this->data[$this->alias]['username']);
-	//}
 
-	if (isset($this->data[$this->alias]['email']) && !empty($this->data[$this->alias]['email'])) {
-		$this->data[$this->alias]['email'] = strtolower($this->data[$this->alias]['email']);
+	function changeStatus($ids, $status) {
+		$ids = array_map('intval', $ids);
+		$this->query('UPDATE users SET active = ' . $status . ' WHERE id IN ('. implode(',', $ids) . ')');
+		return $this->getAffectedRows();
 	}
 
-	return true;
-}
+	public function beforeSave($options = array()) {
+		if (isset($this->data[$this->alias]['password']) && !empty($this->data[$this->alias]['password'])) {
+			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+		}
+
+		if (isset($this->data[$this->alias]['username']) && !empty($this->data[$this->alias]['username'])) {
+			$this->data[$this->alias]['username'] = strtolower($this->data[$this->alias]['username']);
+		}
+
+		if (isset($this->data[$this->alias]['email']) && !empty($this->data[$this->alias]['email'])) {
+			$this->data[$this->alias]['email'] = strtolower($this->data[$this->alias]['email']);
+		}
+
+		return true;
+	}
 }

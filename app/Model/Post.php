@@ -17,7 +17,9 @@ class Post extends AppModel {
 
 
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
-
+	public function isOwnedBy($post, $user) {
+		return $this->field('id', array('id' => $post, 'user_id' => $user)) !== false;
+	}
 /**
  * belongsTo associations
  *

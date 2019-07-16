@@ -17,10 +17,31 @@ class PostsController extends AppController {
     }
 	
 	//auth check
-    public function isAuthorized($user) {
-        
-        return True;
-    }	
+	public function isAuthorized($user) {
+		
+		// All registered users can add posts
+		if (in_array($this->action , array( 'admin_index', 'admin_view'))) {
+			return true;
+		}
+		if (in_array($this->action , array('admin_add'))) {
+			if (isset($user['role']) && $user['role'] === 'admin') {
+				$this->Flash->error(__('You are not allowed to acces this level'));
+				return false;
+			}
+		}
+		// The owner of a post can edit and delete it
+		if (in_array($this->action, array('admin_edit', 'admin_delete'))) {
+			
+			$postId = (int) $this->request->params['pass'][0];
+			if ($this->Post->isOwnedBy($postId, $user['id'])) {
+				return true;
+			}
+			
+		}
+
+		return parent::isAuthorized($user);
+	}
+	
 	/**
 	* view method
 	*
@@ -75,9 +96,10 @@ class PostsController extends AppController {
 	*/
 	public function admin_add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Post']['user_id'] = $this->Auth->user('id');
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
-				$this->Session->setFlash(__('The Post has been saved.'));
+				$this->Flash->success(__('The Post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The Post could not be saved. Please, try again.'));
@@ -98,8 +120,9 @@ class PostsController extends AppController {
 			throw new NotFoundException(__('Invalid Post'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+			$this->request->data['Post']['user_id'] = $this->Auth->user('id');
 			if ($this->Post->save($this->request->data)) {
-				$this->Session->setFlash(__('The Post has been saved.'));
+				$this->Flash->success(__('The Post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The Post could not be saved. Please, try again.'));
