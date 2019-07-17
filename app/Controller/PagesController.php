@@ -30,10 +30,7 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
-    public function isAuthorized($user) {
-        //auth check
-        return True;
-    }	
+	
     /**
      * call beforeFilter
     **/
@@ -68,8 +65,11 @@ class PagesController extends AppController {
 	*/
 	public function admin_index() {
 		$this->loadModel('Post');
-		$this->set('posts', $this->Post->find('all'));	
-		
+		$this->loadModel('User');
+		$this->loadModel('Comment');
+		$this->set('posts', $this->Post->find('count'));	
+		$this->set('users', $this->User->find('count'));
+		$this->set('comments', $this->Comment->find('count'));		
 	}
 	/**
 	* Displays a view

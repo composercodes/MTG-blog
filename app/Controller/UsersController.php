@@ -81,7 +81,20 @@ class UsersController extends AppController {
 		$this->render('admin_add');
     }
 	
-
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function admin_view($id = null) {
+		if (!$this->User->exists($id)) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+		$this->set('user', $this->User->find('first', $options));
+	}
 /**
  * delete method
  *
@@ -102,8 +115,33 @@ class UsersController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-
 	
+    /**
+    * User signup method
+    */
+    public function admin_reset() {
+        $id = $this->getUser();
+        if (!$this->User->exists($id)) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            $this->request->data['User']['id']=$id;
+            if ($this->request->data['User']['new_password'] == $this->request->data['User']['retype_password'] ) {
+                $this->request->data['User']['password'] = $this->request->data['User']['new_password'] ;
+                if ($this->User->save($this->request->data)) {
+                    $this->Session->setFlash(__('  تم تغير كلمة المرور بنجاح'));
+                    return $this->redirect(array('controller'=>'users','action' => 'view',$id));
+                } else {
+                    $this->Session->setFlash(__('حدث خطأ ما !!!'));
+                    return $this->redirect(array('controller'=>'users','action' => 'reset',$id));
+                }
+            } else {
+                $this->Session->setFlash(__('الباسورد غير متشابهة , من فضلك تأكد من الباسورد الجديدة'));
+                return $this->redirect(array('controller'=>'users','action' => 'reset',$id));
+
+            }
+        }
+    }	
     /**
     * User signup method
     */
@@ -117,6 +155,8 @@ class UsersController extends AppController {
                 $this->Session->setFlash(__('Something Wrong Please try again'));
             }
         }
+		$roles = $this->User->getroles();
+		$this->set('roles', $roles);		
     }
 
     /**

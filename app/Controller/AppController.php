@@ -53,8 +53,30 @@ class AppController extends Controller {
         if (isset($this->request->params['admin'])){
             $this->layout = 'admin';
         } 
+		
+		// determine rest controller or not
+		if(in_array($this->params['controller'],array('rest_posts'))){
+			// For RESTful web service requests, we check the name of our contoller
+			$this->Auth->allow();
+			// this line should always be there to ensure that all rest calls are secure
+			/* $this->Security->requireSecure(); */
+			//$this->Security->unlockedActions = array('edit','delete','add','view');
+			 
+		}else{
+			// setup out Auth
+			$this->Auth->allow();         
+		}		
     }
-	
+	//getUser ID
+    function getUser() {
+
+        return  $this->Auth->user('id');
+    }	
+    //before render
+    public function beforeRender() {
+        $this->response->disableCache();
+
+    }	
 	//auth check
 	public function isAuthorized($user) {
 		// Admin can access every action
@@ -63,18 +85,6 @@ class AppController extends Controller {
 			return true;
 		}
 		
-		// determine rest controller or not
-		if(in_array($this->params['controller'],array('rest_phones'))){
-			// For RESTful web service requests, we check the name of our contoller
-			$this->Auth->allow();
-			// https secure connection
-			/* $this->Security->requireSecure(); */
-			$this->Security->unlockedActions = array('edit','delete','add','view');
-			
-		}else{
-			// setup out Auth
-			$this->Auth->allow();			
-		}
 		// Default deny
 		$this->Flash->error(__('You are not allowed to acces this level'));
 		return false;
