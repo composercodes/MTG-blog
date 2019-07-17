@@ -3,31 +3,132 @@
 [![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
 [![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
 [![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](https://travis-ci.org/cakephp/cakephp)
-[![Code consistency](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/grade.svg)](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/)
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+M.T.G CakePHP Blog 
 
 
-## Some Handy Links
+## Features 
 
-[CakePHP](https://cakephp.org) - The rapid development PHP framework
+Users - ( index-add-edit-view-reset_password )
 
-[CookBook](https://book.cakephp.org) - THE CakePHP user documentation; start learning here!
+Posts - ( index-add-edit-view )
 
-[API](https://api.cakephp.org) - A reference to CakePHP's classes
+Comments - ( index-add-edit-view )
 
-[Plugins](https://plugins.cakephp.org) - A repository of extensions to the framework
+Admin Prefix - Use Admin perfix to manage dashboard
 
-[The Bakery](https://bakery.cakephp.org) - Tips, tutorials and articles
+Image Upload Behavior  - 
 
-[Community Center](https://community.cakephp.org) - A source for everything community related
+RESTful Api - 
+<table border="1" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+<th>
+<p>
+							<strong>HTTP format</strong>
+</p></th>
+<th>
+<p>
+							<strong>URL.format</strong>
+</p></th>
+<th>
+<p>
+							<strong>Controller action invoked</strong>
+</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>
+							GET
+</p></td>
+<td>
+<p>
+							/rest_posts.json
+</p></td>
+<td>
+<p>
+							RestPostsController::index()
+</p></td>
+</tr>
+<tr>
+<td>
+<p>
+							GET
+</p></td>
+<td>
+<p>
+							/ rest_posts/123.json
+</p></td>
+<td>
+<p>
+							RestPostsController::view(123)
+</p></td>
+</tr>
+<tr>
+<td>
+<p>
+							POST
+</p></td>
+<td>
+<p>
+							/ rest_posts.json
+</p></td>
+<td>
+<p>
+							RestPostsController::add()
+</p></td>
+</tr>
+<tr>
+<td>
+<p>
+							PUT
+</p></td>
+<td>
+<p>
+							/ rest_posts/123.json
+</p></td>
+<td>
+<p>
+							RestPostsController::edit(123)
+</p></td>
+</tr>
+<tr>
+<td>
+<p>
+							DELETE
+</p></td>
+<td>
+<p>
+							/ rest_posts/123.json
+</p></td>
+<td>
+<p>
+							RestPostsController::delete(123)
+</p></td>
+</tr>
+<tr>
+<td>
+<p>
+							POST
+</p></td>
+<td>
+<p>
+							/ rest_posts/123.json
+</p></td>
+<td>
+<p>
+							RestPostsController::edit(123)
+</p></td>
+</tr>
+</tbody>
+</table>
+Auth & Authorized - Join a live session and get skilled with the framework
 
-[Training](https://training.cakephp.org) - Join a live session and get skilled with the framework
+Client Test Api - Don't miss our annual CakePHP conference
 
-[CakeFest](https://cakefest.org) - Don't miss our annual CakePHP conference
 
-[Cake Software Foundation](https://cakefoundation.org) - Promoting development related to CakePHP
 
 
 ## Get Support!
@@ -40,9 +141,3 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 
 [Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
 
-
-## Contributing
-
-[CONTRIBUTING.md](CONTRIBUTING.md) - Quick pointers for contributing to the CakePHP project
-
-[CookBook "Contributing" Section (2.x)](https://book.cakephp.org/2.0/en/contributing.html) [(3.x)](https://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
