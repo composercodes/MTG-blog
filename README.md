@@ -124,9 +124,9 @@ RESTful Api -
 </tr>
 </tbody>
 </table>
-Auth & Authorized - Join a live session and get skilled with the framework
+Auth & Authorized - Use Auth Component and authorize actions depend on user role
 
-Client Test Api - Don't miss our annual CakePHP conference
+Client Test Api - Test Api (http://localhost/MTG-blog/Client)
 
 
 
